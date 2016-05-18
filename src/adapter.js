@@ -218,6 +218,9 @@ AbstractPouchDB.prototype.put =
     temp = args.shift();
     temptype = typeof temp;
     if (temptype === "string" && !id) {
+      console.warn('db.put(doc, id, rev) has been deprecated and will be ' +
+                   'removed in a future release, please use ' +
+                   'db.put({_id: id, _rev: rev}) instead');
       doc._id = temp;
       id = true;
     } else if (temptype === "string" && id && !('_rev' in doc)) {

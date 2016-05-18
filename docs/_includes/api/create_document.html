@@ -104,6 +104,11 @@ db.get('mydoc').then(function(doc) {
 Instead of including the `_id` and `_rev` in the document, you can
 also pass them in as options:
 
+{% include alert/start.html variant="warning" %}
+This method of updating documents is deprecated and will be removed in future
+releases.
+{% include alert/end.html %}
+
 {% include code/start.html id="updateDoc2" type="callback" %}
 {% highlight js %}
 db.get('mydoc', function(err, doc) {
